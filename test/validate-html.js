@@ -9,7 +9,8 @@ describe('html validity', function() {
 
         var fileCount = 0,
             validationCount = 0;
-        var countOptions = {
+
+        walk(path.join(__dirname, '/../src/'), {
             listeners: {
                 file: function(root, fileStats, walkerNext) {
                     if (!/html$/.test(fileStats.name)) {
@@ -19,10 +20,9 @@ describe('html validity', function() {
                     walkerNext();
                 }
             }
-        };
-        var walker = walk(path.join(__dirname, '/../src/'), countOptions);
+        });
 
-        var options = {
+        walk(path.join(__dirname, '/../src/'), {
             listeners: {
                 file: function(root, fileStats, walkerNext) {
                     if (!/html$/.test(fileStats.name)) {
@@ -53,8 +53,6 @@ describe('html validity', function() {
                     walkerNext();
                 }
             }
-        };
-
-        var walker = walk(path.join(__dirname, '/../src/'), options);
+        });
     });
 });
