@@ -13,10 +13,9 @@ describe('html validity', function() {
         walk(path.join(__dirname, '/../src/'), {
             listeners: {
                 file: function(root, fileStats, walkerNext) {
-                    if (!/html$/.test(fileStats.name)) {
-                        return walkerNext();
+                    if (/html$/.test(fileStats.name)) {
+                        fileCount += 1;
                     }
-                    fileCount += 1;
                     walkerNext();
                 }
             }
