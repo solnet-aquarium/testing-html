@@ -1,0 +1,13 @@
+{
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "html-tag-validator": "^1.0.3",
+    "mocha": "^2.0.1",
+    "walk": "^2.3.4"
+  },
+  "scripts": {
+    "pretest": "npm install",
+    "test": "mocha test/**/*.js --recursive -w -R spec",
+    "commit-test": "mocha test/**/*.js --recursive -R spec"
+  }
+}
